@@ -3,11 +3,11 @@
   "extensionBundle": {
 		"id": "Microsoft.Azure.Functions.ExtensionBundle",
 		"version": "[1.*, 2.0.0)"
-	},
-	"customHandler": {	    
-		"description": {
-			"defaultExecutablePath": "/Users/abdwivedi/testing/go-azure-functions/go.sh"
-		},
-		"enableForwardingHttpRequest":true
-	}
+  },
+  
+  "httpWorker": {
+    "description": {
+      "defaultExecutablePath": "GoCustomHandlers"
+    }
+  }
 }

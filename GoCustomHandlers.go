@@ -28,9 +28,10 @@ func simpleHttpTriggerHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	customHandlerPort, exists := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT")
-	if !exists {
-		customHandlerPort = "8080"
+	//customHandlerPort, exists := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT")
+	customHandlerPort, exists := os.LookupEnv("FUNCTIONS_HTTPWORKER_PORT")
+	if exists {
+		fmt.Println("FUNCTIONS_CUSTOMHANDLER_PORT: " + customHandlerPort)
 	}
 
 	mux := http.NewServeMux()
